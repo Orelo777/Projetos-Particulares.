@@ -1,8 +1,12 @@
 package orelo;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Biblioteca {
+	
+	Scanner sc = new Scanner(System.in);
+	
 	ArrayList<Livros> livro = new ArrayList<>();
 	
 	
@@ -67,7 +71,7 @@ public class Biblioteca {
 	
 	public void removerlivro(String titulo) {
 		
-		for(Livros L:livro) {
+		for(Livros L: livro) {
 			if(L.getTitulo().equalsIgnoreCase(titulo)) {
 				livro.remove(L);
 				
@@ -82,4 +86,52 @@ public class Biblioteca {
 		
 		
 	}
-}
+	
+	
+	public void atualizarlivro(String titulo) {
+		for(Livros L: livro) {
+			
+			if(L.getTitulo().equals(titulo) ) {
+				System.out.println("Digite o novo título: ");
+				L.setTitulo(sc.next());
+				
+				System.out.println("Digite o nome atualizado do autor: ");
+				L.setAutor(sc.next());
+				
+				System.out.println("Digite o ano da publicação atualizado: ");
+				L.setPublicacao(sc.nextInt());
+			}
+			else {
+				System.out.println("Livro não encontrado!!");
+			}
+			
+			
+			
+		}
+		
+		
+		
+	}
+		
+	
+public void listarlivros2() {
+		
+		if(livro.isEmpty()) {
+			System.out.println("-----------------------------------------------------------");
+		}else {
+			System.out.println("Livros listados: ");
+			
+			for(Livros L : livro) {
+				
+				System.out.println(L);
+				System.out.println();
+				
+			}
+			
+		}
+		
+		
+		
+	}
+		
+	}
