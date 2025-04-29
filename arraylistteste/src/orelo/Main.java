@@ -11,6 +11,7 @@ package orelo;
 				int opcao = 0;
 				
 				Biblioteca biblioteca = new Biblioteca();
+				
 				do{
 				System.out.println("=-=-=-MENU-=-=-=");
 			
@@ -18,7 +19,8 @@ package orelo;
 				System.out.println("[2]- Mostrar os livros registrados");
 				System.out.println("[3]- Buscar um livro através do título");
 				System.out.println("[4]- Remover um livro através do título");
-				System.out.println("[5]- Sair do programa");
+				System.out.println("[5]- Atualizar informações de um livro");
+				System.out.println("[6]- Sair do programa");
 				System.out.println("==========================================");
 				System.out.println("");
 				System.out.print("Digite um número para escolher uma dessas opções: ");
@@ -80,7 +82,27 @@ package orelo;
 					System.out.println("---------------------------------------------");
 								break;
 								
-				case 5: 
+								
+				case 5:
+					System.out.println("---ATUALIZAR LIVRO---");
+					System.out.println();
+					System.out.println("Livros já registrados: ");
+					biblioteca.listarlivros2();
+					
+					System.out.println("Digite o título do livro que você quer atualizar: ");
+					String titulo2 = sc.nextLine();
+					
+					biblioteca.atualizarlivro(titulo2);
+					
+					
+					
+					
+					
+					
+					
+								break;
+								
+				case 6: 
 					System.out.println();
 					System.out.println("Obrigado por usar o programa!");
 					System.out.println("Volte sempre... ");
@@ -96,7 +118,7 @@ package orelo;
 				
 				
 				}
-				}while(opcao!=5);
+				}while(opcao!=6);
 
 				
 				
